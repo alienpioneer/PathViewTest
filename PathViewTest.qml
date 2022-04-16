@@ -123,15 +123,6 @@ Window {
                 PathAttribute { name: "iconOpacity"; value: 1.0 }
                 PathAttribute { name: "iconScale"; value: 1.0 }
 
-                //PathCurve { x: mainWindow.width/6; y: mainWindow.height/2}
-                //PathCurve { x: mainWindow.width/2; y: mainWindow.height/3}
-                //PathCurve { x: 5*mainWindow.width/6; y: mainWindow.height/2}
-                //PathCurve { x: mainWindow.width/2; y: 2*mainWindow.height/3}
-                //PathAttribute { name: "iconOpacity"; value: 1.0 }
-                //PathAttribute { name: "iconScale"; value: 1.0 }
-                //PathQuad { id: pathPoint1; x: mainWindow.width/6; y: mainWindow.height/3; controlX: mainWindow.width/6; controlY: mainWindow.height/6 }
-                //PathQuad { id: pathPoint2; x: 3*mainWindow.width/6; y: mainWindow.height/4; controlX: mainWindow.width/2; controlY: 60}
-                //PathQuad { id: pathPoint3;  x: 4*mainWindow.width/6; y: mainWindow.height/4; controlX: mainWindow.width/3; controlY: 2*mainWindow.height/3 }
             }
 
         }
@@ -140,7 +131,6 @@ Window {
             text: "C1"
             color: "white"
             x: pathPoint1.controlX; y: pathPoint1.controlY
-            //x: mainWindow.width/6; y: mainWindow.height/2
             font.pointSize: 30
         }
 
@@ -148,7 +138,6 @@ Window {
             text: "C2"
             color: "white"
             x: pathPoint2.controlX; y: pathPoint2.controlY
-            //x: 5*mainWindow.width/6; y: mainWindow.height/2
             font.pointSize: 30
         }
 
@@ -156,7 +145,6 @@ Window {
             text: "C3"
             color: "white"
             x: pathPoint3.controlX; y: pathPoint3.controlY
-            //x: mainWindow.width/2; y: mainWindow.height/3
             font.pointSize: 30
         }
 
@@ -164,7 +152,6 @@ Window {
             text: "C4"
             color: "white"
             x: pathPoint4.controlX; y: pathPoint4.controlY
-            //x: mainWindow.width/2; y: mainWindow.height/3
             font.pointSize: 30
         }
 
