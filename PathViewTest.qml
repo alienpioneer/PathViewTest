@@ -39,19 +39,28 @@ Window {
                 name: "E"
                 icon: "pics/qtlogo.png"
             }
+            ListElement {
+                name: "F"
+                icon: "pics/qtlogo.png"
+            }
+            ListElement {
+                name: "G"
+                icon: "pics/qtlogo.png"
+            }
         }
 
         Component {
             id: delegateObj
             Column {
-                id: wrapper
+                id: columnWrapper
                 //opacity: PathView.isCurrentItem ? 1 : 0.5
                 opacity: PathView.iconOpacity
                 scale: PathView.iconScale
 
                 Image {
                     id: delegateImage
-                    anchors.horizontalCenter: nameText.horizontalCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    //anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.PreserveAspectFit
                     width: 80; height: 80
                     source: icon
@@ -61,6 +70,7 @@ Window {
                     id: nameText
                     text: name
                     font.pointSize: 16
+                    anchors.horizontalCenter: parent.horizontalCenter
                     color: "white"
                 }
             }
@@ -80,6 +90,8 @@ Window {
             delegate: delegateObj
             model: modelList
             anchors.fill: parent
+            focus: true
+            antialiasing: true
             anchors.rightMargin: 0
             anchors.bottomMargin: 0
             anchors.leftMargin: 0
@@ -90,6 +102,8 @@ Window {
             property int centerY: mainWindow.height/2 - mainWindow.height/10
             property int circleWidth: mainWindow.width/2
             property int circleHeight: mainWindow.height/4
+            property int controlPointsOffsetX: 10
+            property int controlPointsOffsetY: 20
 
             path: Path{
                 id: mainPath
@@ -104,8 +118,8 @@ Window {
                 {  id: pathPoint1;
                     x: pathViewObj.centerX - pathViewObj.circleWidth/2;
                     y: pathViewObj.centerY;
-                    controlX: x+10 ;
-                    controlY: y+pathViewObj.circleHeight/2-20;
+                    controlX: x + pathViewObj.controlPointsOffsetX ;
+                    controlY: y + pathViewObj.circleHeight/2 - pathViewObj.controlPointsOffsetY;
                 }
                 PathAttribute { name: "iconOpacity"; value: 0.6 }
                 PathAttribute { name: "iconScale"; value: 0.6 }
@@ -115,8 +129,8 @@ Window {
                 {  id: pathPoint2;
                     x: pathViewObj.centerX;
                     y: pathViewObj.centerY - pathViewObj.circleHeight/2;
-                    controlX: x - pathViewObj.circleWidth/2 +10 ;
-                    controlY: y+20;
+                    controlX: x - pathViewObj.circleWidth/2 + pathViewObj.controlPointsOffsetX ;
+                    controlY: y + pathViewObj.controlPointsOffsetY;
                 }
                 PathAttribute { name: "iconOpacity"; value: 0.2 }
                 PathAttribute { name: "iconScale"; value: 0.3 }
@@ -126,8 +140,8 @@ Window {
                 {  id: pathPoint3;
                     x: pathViewObj.centerX + pathViewObj.circleWidth/2;
                     y: pathViewObj.centerY;
-                    controlX: x-10 ;
-                    controlY: y - pathViewObj.circleHeight/2 + 20;
+                    controlX: x - pathViewObj.controlPointsOffsetX ;
+                    controlY: y - pathViewObj.circleHeight/2 + pathViewObj.controlPointsOffsetY;
                 }
                 PathAttribute { name: "iconOpacity"; value: 0.6 }
                 PathAttribute { name: "iconScale"; value: 0.6 }
@@ -137,30 +151,31 @@ Window {
                 {  id: pathPoint4;
                     x: pathViewObj.centerX;
                     y: pathViewObj.centerY + pathViewObj.circleHeight/2;
-                    controlX: x + pathViewObj.circleWidth/2 -10 ;
-                    controlY: y-20;
+                    controlX: x + pathViewObj.circleWidth/2 - pathViewObj.controlPointsOffsetX ;
+                    controlY: y - pathViewObj.controlPointsOffsetY;
                 }
-//                PathAttribute { name: "iconOpacity"; value: 1.0 }
-//                PathAttribute { name: "iconScale"; value: 1.0 }
             }
 
-            highlight: Rectangle {
-                radius: 4
-                width: 10; height: 10
-                color: "lightblue"
-            }
+//            highlight: Rectangle {
+//                x: pathPoint1.x
+//                y: pathPoint1.y - 20
+//                width: 100; height: 100
+//                color: "transparent"
+//                border.color: "lightblue"
+//            }
 
         }
 
 
         // ------------------------------ TESTS ----------------------------------------------------------
-        Component {
-            id: delegateTest
-            Rectangle{
-                width: 2
-                height: 2
-            }
-        }
+
+//        Component {
+//            id: delegateTest
+//            Rectangle{
+//                width: 2
+//                height: 2
+//            }
+//        }
 
 //        Text {
 //            text: "C1"
