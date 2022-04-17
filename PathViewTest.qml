@@ -56,6 +56,7 @@ Window {
                 //opacity: PathView.isCurrentItem ? 1 : 0.5
                 opacity: PathView.iconOpacity
                 scale: PathView.iconScale
+                z: PathView.z
 
                 Image {
                     id: delegateImage
@@ -112,6 +113,7 @@ Window {
                 startY: pathViewObj.centerY + pathViewObj.circleHeight/2;
                 PathAttribute { name: "iconOpacity"; value: 1.0 }
                 PathAttribute { name: "iconScale"; value: 1.0 }
+                PathAttribute { name: "z"; value: 0 }
 
                 //Left
                 PathQuad
@@ -121,8 +123,9 @@ Window {
                     controlX: x + pathViewObj.controlPointsOffsetX ;
                     controlY: y + pathViewObj.circleHeight/2 - pathViewObj.controlPointsOffsetY;
                 }
-                PathAttribute { name: "iconOpacity"; value: 0.6 }
+                PathAttribute { name: "iconOpacity"; value: 1 }
                 PathAttribute { name: "iconScale"; value: 0.6 }
+                PathAttribute { name: "z"; value: -1 }
 
                 //Upper Center
                 PathQuad
@@ -134,6 +137,7 @@ Window {
                 }
                 PathAttribute { name: "iconOpacity"; value: 0.2 }
                 PathAttribute { name: "iconScale"; value: 0.3 }
+                PathAttribute { name: "z"; value: -2 }
 
                 //Right
                 PathQuad
@@ -143,8 +147,9 @@ Window {
                     controlX: x - pathViewObj.controlPointsOffsetX ;
                     controlY: y - pathViewObj.circleHeight/2 + pathViewObj.controlPointsOffsetY;
                 }
-                PathAttribute { name: "iconOpacity"; value: 0.6 }
+                PathAttribute { name: "iconOpacity"; value: 1 }
                 PathAttribute { name: "iconScale"; value: 0.6 }
+                PathAttribute { name: "z"; value: -1 }
 
                 //Lower Center
                 PathQuad
