@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
+//import QtGraphicalEffects 1.12
 
 Window {
     id: mainWindow
@@ -65,6 +66,12 @@ Window {
                     fillMode: Image.PreserveAspectFit
                     width: 80; height: 80
                     source: icon
+
+//                    ColorOverlay {
+//                            anchors.fill: delegateImage
+//                            source: delegateImage
+//                            color:  columnWrapper.isCurrentItem ? "#80800000" : "transparent"
+//                    }
                 }
 
                 Text {
