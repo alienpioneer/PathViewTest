@@ -1,6 +1,5 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-//import QtGraphicalEffects 1.12
 
 Window {
     id: mainWindow
@@ -66,12 +65,6 @@ Window {
                     fillMode: Image.PreserveAspectFit
                     width: 80; height: 80
                     source: icon
-
-//                    ColorOverlay {
-//                            anchors.fill: delegateImage
-//                            source: delegateImage
-//                            color:  columnWrapper.isCurrentItem ? "#80800000" : "transparent"
-//                    }
                 }
 
                 Text {
@@ -167,58 +160,7 @@ Window {
                     controlY: y - pathViewObj.controlPointsOffsetY;
                 }
             }
-
-//            highlight: Rectangle {
-//                x: pathPoint1.x
-//                y: pathPoint1.y
-//                width: 100; height: 120
-//                color: "transparent"
-//                border.color: "lightblue"
-//            }
-
         }
-
-
-        // ------------------------------ TESTS ----------------------------------------------------------
-
-//        Component {
-//            id: delegateTest
-//            Rectangle{
-//                width: 2
-//                height: 2
-//            }
-//        }
-
-//        Text {
-//            text: "C1"
-//            color: "white"
-//            x: mainPath.startX; y: mainPath.startY
-//            //x: pathPoint1.controlX; y: pathPoint1.controlY
-//            //x: pathViewObj.centerX; y: pathViewObj.centerY;
-//            font.pointSize: 30
-//        }
-
-//        Text {
-//            text: "C2"
-//            color: "white"
-//            x: pathPoint2.controlX; y: pathPoint2.controlY
-//            font.pointSize: 30
-//        }
-
-//        Text {
-//            text: "C3"
-//            color: "white"
-//            x: pathPoint3.controlX; y: pathPoint3.controlY
-//            font.pointSize: 30
-//        }
-
-//        Text {
-//            text: "C4"
-//            color: "white"
-//            x: pathPoint4.controlX; y: pathPoint4.controlY
-//            font.pointSize: 30
-//        }
-
     }
 
 }
