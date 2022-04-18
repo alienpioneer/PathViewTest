@@ -97,7 +97,7 @@ Window {
             anchors.bottomMargin: 0
             anchors.leftMargin: 0
             anchors.topMargin: 0
-            //flickDeceleration: 200
+            flickDeceleration: 200
             maximumFlickVelocity: 500
             property int centerX: mainWindow.width/2
             property int centerY: mainWindow.height/2 - mainWindow.height/10
@@ -120,24 +120,24 @@ Window {
                 {  id: pathPoint1;
                     x: pathViewObj.centerX - pathViewObj.circleWidth/2;
                     y: pathViewObj.centerY;
-                    controlX: x + pathViewObj.controlPointsOffsetX ;
+                    controlX: x + pathViewObj.controlPointsOffsetX - pathViewObj.controlPointsOffsetX ;
                     controlY: y + pathViewObj.circleHeight/2 - pathViewObj.controlPointsOffsetY;
                 }
                 PathAttribute { name: "iconOpacity"; value: 1 }
                 PathAttribute { name: "iconScale"; value: 0.6 }
-                PathAttribute { name: "z"; value: -1 }
+                PathAttribute { name: "z"; value: 0 }
 
                 //Upper Center
                 PathQuad
                 {  id: pathPoint2;
                     x: pathViewObj.centerX;
                     y: pathViewObj.centerY - pathViewObj.circleHeight/2;
-                    controlX: x - pathViewObj.circleWidth/2 + pathViewObj.controlPointsOffsetX ;
-                    controlY: y + pathViewObj.controlPointsOffsetY;
+                    controlX: x - pathViewObj.circleWidth/2 //+ pathViewObj.controlPointsOffsetX ;
+                    controlY: y //+ pathViewObj.controlPointsOffsetY;
                 }
                 PathAttribute { name: "iconOpacity"; value: 0.2 }
                 PathAttribute { name: "iconScale"; value: 0.3 }
-                PathAttribute { name: "z"; value: -2 }
+                PathAttribute { name: "z"; value: -1 }
 
                 //Right
                 PathQuad
@@ -145,11 +145,11 @@ Window {
                     x: pathViewObj.centerX + pathViewObj.circleWidth/2;
                     y: pathViewObj.centerY;
                     controlX: x - pathViewObj.controlPointsOffsetX ;
-                    controlY: y - pathViewObj.circleHeight/2 + pathViewObj.controlPointsOffsetY;
+                    controlY: y - pathViewObj.circleHeight/2 //+ pathViewObj.controlPointsOffsetY;
                 }
                 PathAttribute { name: "iconOpacity"; value: 1 }
                 PathAttribute { name: "iconScale"; value: 0.6 }
-                PathAttribute { name: "z"; value: -1 }
+                PathAttribute { name: "z"; value: 0 }
 
                 //Lower Center
                 PathQuad
@@ -163,8 +163,8 @@ Window {
 
 //            highlight: Rectangle {
 //                x: pathPoint1.x
-//                y: pathPoint1.y - 20
-//                width: 100; height: 100
+//                y: pathPoint1.y
+//                width: 100; height: 120
 //                color: "transparent"
 //                border.color: "lightblue"
 //            }
