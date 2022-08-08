@@ -1,43 +1,20 @@
 import QtQuick 2.12
 
 Item {
+    property Component testDelegate: delegateTest
+    property Text txtC1: txt1
+    property Text txtC2: txt2
+    property Text txtC3: txt3
+    property Text txtC4: txt4
+
+
+    Component {
+        id: delegateTest
+        Rectangle{
+            width: 2
+            height: 2
+        }
+    }
+
 
 }
-
-//        Component {
-//            id: delegateTest
-//            Rectangle{
-//                width: 2
-//                height: 2
-//            }
-//        }
-
-//        Text {
-//            text: "C1"
-//            color: "white"
-//            x: mainPath.startX; y: mainPath.startY
-//            //x: pathPoint1.controlX; y: pathPoint1.controlY
-//            //x: pathViewObj.centerX; y: pathViewObj.centerY;
-//            font.pointSize: 30
-//        }
-
-//        Text {
-//            text: "C2"
-//            color: "white"
-//            x: pathPoint2.controlX; y: pathPoint2.controlY
-//            font.pointSize: 30
-//        }
-
-//        Text {
-//            text: "C3"
-//            color: "white"
-//            x: pathPoint3.controlX; y: pathPoint3.controlY
-//            font.pointSize: 30
-//        }
-
-//        Text {
-//            text: "C4"
-//            color: "white"
-//            x: pathPoint4.controlX; y: pathPoint4.controlY
-//            font.pointSize: 30
-//        }
